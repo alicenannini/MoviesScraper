@@ -4,17 +4,17 @@ import org.jsoup.nodes.*;
 import org.jsoup.select.*;
 
 public class OmdbScraper {
-	final static String key = "7d842b51";
+	final static String key = "804f7738";
 	
 	public static void main(String[] args) throws IOException{
     	int i = 0;
     	String url = "http://www.omdbapi.com/?apikey="+key+"&t=";
-    	String path = "/home/alice/Documenti/AIDE/LSMD/Task 2/";
-    	String source = "wildMovies2021-2006.txt";
+    	String path = "/home/marco/Downloads/";
+    	String source = "marco_2.txt";
     	String destination = "moviesDB_3.json";
 	    
     	try(BufferedReader bufferedReader = new BufferedReader(new FileReader(path+source))) {
-    		while(i < 440) {    	    	
+    		while(i < 560) {    	    	
 	    		String movie = bufferedReader.readLine();
 	    		System.out.println(i+": "+movie);
 		    	Document doc = Jsoup.connect(url+movie).ignoreContentType(true).get();
